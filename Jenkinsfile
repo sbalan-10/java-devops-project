@@ -56,12 +56,21 @@ pipeline {
             }
         }
 
+      stage('Archive WAR') {
+         steps {
+              archiveArtifacts artifacts: 'target/*.war'
+          }
+       }
+
     }
 
     post {
         success {
             echo "Build Successful"
         }
+        failure {
+        echo "Build Failed"
+       }
     }
 }
 
