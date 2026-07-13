@@ -3,14 +3,14 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME="yourdockerhubusername/myapp"
+        IMAGE_NAME="ssivabalan/myapp"
         IMAGE_TAG="${BUILD_NUMBER}"
         DOCKER_CREDS=credentials('dockerhub-creds')
     }
 
     tools {
-        jdk 'JDK17'
-        maven 'Maven3'
+        jdk 'jdk17'
+        maven 'maven'
     }
 
     stages {
@@ -18,7 +18,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/YOUR_USERNAME/java-devops-project.git'
+                url: 'https://github.com/sbalan-10/java-devops-project.git'
             }
         }
 
