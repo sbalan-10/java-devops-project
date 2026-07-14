@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME="ssivabalan/myapp"
+        IMAGE_NAME="ssivabalan/myapp:2"
         IMAGE_TAG="${BUILD_NUMBER}"
         DOCKER_CREDS=credentials('dockerhub-creds')
     }
